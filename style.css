@@ -1,0 +1,119 @@
+/* =====================================
+   Global Styles
+   ===================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f5f5f5;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+/* =====================================
+   Navigation (Flexbox)
+   ===================================== */
+nav {
+  display: flex;                     /* Flexbox layout */
+  justify-content: space-between;    /* Logo left, menu right */
+  align-items: center;
+  background: #222;
+  padding: 1rem;
+  color: white;
+}
+
+nav h1 {
+  font-size: 1.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;                       /* spacing between links */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ff9800;                    /* hover effect */
+}
+
+/* =====================================
+   Main Content (Grid)
+   ===================================== */
+.main-grid {
+  display: grid;                     /* CSS Grid layout */
+  grid-template-columns: 1fr;        /* Single column on mobile */
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);       /* lift effect on hover */
+}
+
+/* =====================================
+   Footer
+   ===================================== */
+footer {
+  text-align: center;
+  background: #222;
+  color: white;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* =====================================
+   Media Queries (Responsiveness)
+   ===================================== */
+
+/* Tablet screens ≥ 600px */
+@media (min-width: 600px) {
+  .main-grid {
+    grid-template-columns: 1fr 1fr;  /* 2 columns */
+  }
+}
+
+/* Small desktop ≥ 900px */
+@media (min-width: 900px) {
+  nav ul {
+    gap: 2rem;
+  }
+
+  .main-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  }
+}
+
+/* Large desktop ≥ 1200px */
+@media (min-width: 1200px) {
+  .container {
+    width: 80%;                      /* wider content */
+  }
+
+  .main-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  }
+}
